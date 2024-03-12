@@ -1,0 +1,39 @@
+name: Main
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: imagick, swoole
+          tools: composer:2.7
+          coverage: pcov
+
+      - name: Install dependencies
+        uses: ramsey/composer-install@v2
+
+      - name: Run tests
+        uses: php-actions/phpunit@v3
+
+      - uses: qltyai/qlty-action/coverage@main
+        with:
+          coverage-token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
+          file: coverage/coverage.xml
