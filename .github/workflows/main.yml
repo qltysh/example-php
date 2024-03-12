@@ -30,6 +30,11 @@ jobs:
       - name: Install dependencies
         uses: ramsey/composer-install@v2
 
+      - name: Setup env
+        run: |
+            cp .env.example .env
+            php artisan key:generate
+
       - name: Run tests
         run: vendor/bin/phpunit
 
