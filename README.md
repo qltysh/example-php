@@ -12,6 +12,7 @@ This repository uses [PHPUnit](https://phpunit.de/index.html) for testing and ge
 - [Composer](https://getcomposer.org/) 2.7.x or above
 - [Laravel](https://laravel.com/) 9.x or above
 - [PHPUnit](https://phpunit.de/index.html) 10.x or above
+- [Pcov](https://github.com/krakjoe/pcov) 1.0.11 or above
 - Run tests with `vendor/bin/phpunit`
 - An account on Qlty (free for open source)
 - `QLTY_COVERAGE_TOKEN` is set as a GitHub Actions [repository secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
