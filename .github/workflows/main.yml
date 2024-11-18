@@ -40,7 +40,7 @@ jobs:
       - name: Run tests
         run: vendor/bin/phpunit
 
-      - uses: qltyai/qlty-action/coverage@main
+      - uses: qltysh/qlty-action/coverage@main
         with:
           coverage-token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
-          file: coverage/clover.xml
+          files: coverage/clover.xml
