@@ -14,8 +14,11 @@ This repository uses [PHPUnit](https://phpunit.de/index.html) for testing and ge
 - [PHPUnit](https://phpunit.de/index.html) 10.x or above
 - [Pcov](https://github.com/krakjoe/pcov) 1.0.11 or above
 - Run tests with `vendor/bin/phpunit`
-- An account on Qlty (free for open source)
-- `QLTY_COVERAGE_TOKEN` is set as a GitHub Actions [repository secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
+- An account on [Qlty Cloud](https://qlty.sh) (free)
+
+> [!NOTE]
+>
+> This repository is using GitHub's OpenID Connect (OIDC) to authenticate the coverage upload with Qlty Cloud instead of storing a coverage token as a GitHub Actions secret.
 
 ## Set up
 
