@@ -42,3 +42,7 @@ name = "trufflehog"
 
 [[plugin]]
 name = "yamllint"
+
+[[exclude]]
+plugins = ["yamllint"]
+file_patterns = [".github/**"]
