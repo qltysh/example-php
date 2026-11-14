@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.4.0
 
       - name: Setup PHP with PECL extension
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@2.40.0
         with:
           php-version: "8.3"
           extensions: imagick, swoole
@@ -28,7 +28,7 @@ jobs:
           coverage: pcov
 
       - name: Install dependencies
-        uses: ramsey/composer-install@v2
+        uses: ramsey/composer-install@2.3.1
 
       - name: Setup env
         run: |
@@ -38,7 +38,7 @@ jobs:
       - name: Run tests
         run: vendor/bin/phpunit
 
-      - uses: qltysh/qlty-action/coverage@b413a89d8f3a8b36b9edd20b7ef1ad7ae0a7ac3a # version 2.2.2
+      - uses: qltysh/qlty-action/coverage@v2.2.2
         with:
           oidc: true
           files: coverage/clover.xml
